@@ -4,11 +4,29 @@
 
 [English](README.md) · [快速开始](#快速开始) · [部署说明](DEPLOYMENT.md) · [系统架构](#系统架构) · [后续规划](#后续规划)
 
-**在线体验：** TODO — Netlify 部署完成后补充真实地址。公开 Demo 使用无需密钥的 Mock Provider，完整业务流程与本地版本一致。
-
 PantryFlow 是一个移动端优先的 AI 做饭助手，解决“家里有菜，却不知道做什么”的问题。它不要求用户精确称重，而是用“预计还能做几餐”管理库存；系统结合过期日期、现有食材和筛选条件推荐日常菜，做完后自动更新库存并保存历史。
 
 它不是简单的菜谱聊天页面：项目把受控家常菜候选库、可选的大模型排序、结构化输出校验、后端库存规则、推荐批次持久化和幂等扣减连成了完整业务闭环。
+
+## 产品展示
+
+<p align="center">
+  <img src="docs/screenshots/recommendations-desktop.png" alt="PantryFlow 临期菜谱推荐" width="100%">
+  <br><sub>根据库存生成今日菜单，并支持只替换一道菜。</sub>
+</p>
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="docs/screenshots/home-mobile.png" alt="PantryFlow 手机首页" width="260"><br><sub>库存总览与临期提醒</sub></td>
+    <td align="center" width="50%"><img src="docs/screenshots/ingredients-mobile.png" alt="PantryFlow 食材库存" width="260"><br><sub>低负担的食材管理</sub></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="docs/screenshots/recipe-detail-mobile.png" alt="PantryFlow 菜谱详情" width="260"><br><sub>已有食材、缺少食材与制作步骤</sub></td>
+    <td align="center" width="50%"><img src="docs/screenshots/history-mobile.png" alt="PantryFlow 烹饪历史" width="260"><br><sub>烹饪记录与库存反馈</sub></td>
+  </tr>
+</table>
+
+**在线体验 — 即将上线。**
 
 ## 核心功能
 
@@ -30,7 +48,7 @@ PantryFlow 是一个移动端优先的 AI 做饭助手，解决“家里有菜�
 → 点击做完 → 更新剩余餐数 → 保存烹饪历史
 ```
 
-发布前请按 [截图清单](docs/screenshots/README.md) 添加真实截图和 20～40 秒 GIF，注意隐藏 IP、通知和其他隐私信息。
+Demo GIF 将在完成真实录制后补充。
 
 ## 技术栈
 
@@ -71,7 +89,7 @@ cd pantryflow
 .\start.ps1
 ```
 
-打开 <http://127.0.0.1:5173>，API 文档位于 <http://127.0.0.1:8000/docs>。默认使用 `AI_PROVIDER=mock`，无需 API Key。
+打开 <http://localhost:5173>，API 文档位于 <http://localhost:8000/docs>。默认使用 `AI_PROVIDER=mock`，无需 API Key。
 
 连接真实 OpenAI 兼容模型时，复制 `backend/.env.example` 为 `backend/.env`，并配置：
 

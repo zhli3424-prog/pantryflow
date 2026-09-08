@@ -22,16 +22,25 @@ Unlike a thin recipe chatbot, PantryFlow combines a curated home-cooking catalog
 - 📱 **Use it in the kitchen:** compact mobile UI, saved menus, one-dish replacement, and history.
 - 🔑 **Run without an API key:** deterministic demo mode works after installation.
 
-## Demo
+## Product preview
 
-```text
-Add ingredients → Generate a menu → Replace one dish → Follow the recipe
-→ Mark it cooked → Decrease each used ingredient by one estimated meal
-```
+<p align="center">
+  <img src="docs/screenshots/recommendations-desktop.png" alt="PantryFlow expiry-aware recipe recommendations" width="100%">
+  <br><sub>Expiry-aware menus with controlled candidates and single-dish replacement.</sub>
+</p>
 
-**Live demo:** TODO — add the Netlify URL after deployment. The hosted build will use the transparent, key-free Mock provider so visitors can safely try the complete workflow.
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="docs/screenshots/home-mobile.png" alt="PantryFlow mobile home" width="260"><br><sub>Pantry overview and expiry alerts</sub></td>
+    <td align="center" width="50%"><img src="docs/screenshots/ingredients-mobile.png" alt="PantryFlow pantry inventory" width="260"><br><sub>Low-friction pantry management</sub></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="docs/screenshots/recipe-detail-mobile.png" alt="PantryFlow recipe detail" width="260"><br><sub>Practical ingredients and cooking steps</sub></td>
+    <td align="center" width="50%"><img src="docs/screenshots/history-mobile.png" alt="PantryFlow cooking history" width="260"><br><sub>Cooking history and inventory feedback</sub></td>
+  </tr>
+</table>
 
-**Demo GIF:** TODO — add `docs/screenshots/demo.gif` after recording the real application.
+**Live Demo — Coming soon.**
 
 ## Features
 
@@ -47,19 +56,12 @@ Add ingredients → Generate a menu → Replace one dish → Follow the recipe
 - Missing-ingredient list with one-tap copy
 - Friendly API errors and a key-free provider for reproducible demos
 
-## Screenshots
+## Demo flow
 
-> **TODO before public release:** capture the six real assets listed below. No placeholder or AI-generated product screenshot is used.
-
-| Home | Pantry | Recommendations |
-|---|---|---|
-| `home-mobile.png` | `ingredients-mobile.png` | `recommendations-desktop.png` |
-
-| Recipe detail | Cooking history | Demo |
-|---|---|---|
-| `recipe-detail-mobile.png` | `history-mobile.png` | `demo.gif` |
-
-Reserved paths live in [`docs/screenshots`](docs/screenshots/README.md). They should be replaced with real product captures before release.
+```text
+Add ingredients → Generate a menu → Replace one dish → Follow the recipe
+→ Mark it cooked → Decrease each used ingredient by one estimated meal
+```
 
 ## Tech stack
 
@@ -122,7 +124,7 @@ cd pantryflow
 .\start.ps1
 ```
 
-Open <http://127.0.0.1:5173>. API docs are at <http://127.0.0.1:8000/docs>. Close the two server windows to stop the app.
+Open <http://localhost:5173>. API docs are at <http://localhost:8000/docs>. Close the two server windows to stop the app.
 
 ### Manual setup
 
@@ -153,7 +155,7 @@ Demo mode requires no API key:
 # backend/.env
 APP_ENV=development
 DATABASE_URL=sqlite:///./data/cooking_assistant.db
-CORS_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
+CORS_ORIGINS=http://localhost:5173
 AI_PROVIDER=mock
 AI_BASE_URL=https://api.openai.com/v1
 AI_API_KEY=

@@ -26,14 +26,13 @@ Unlike a thin recipe chatbot, PantryFlow combines a curated home-cooking catalog
 
 <p align="center">
   <img src="docs/screenshots/recommendations-desktop.png" alt="PantryFlow expiry-aware recipe recommendations" width="100%">
-  <br><sub>Expiry-aware recommendations with single-dish replacement.</sub>
+  <br><sub>Expiry-aware menu recommendations with single-dish replacement.</sub>
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/home-mobile.png" alt="PantryFlow mobile home" width="30%">
-  <img src="docs/screenshots/recipe-detail-mobile.png" alt="PantryFlow recipe detail" width="30%">
-  <img src="docs/screenshots/history-mobile.png" alt="PantryFlow cooking history" width="30%">
-  <br><sub>Pantry overview → recipe execution → cooking history</sub>
+  <img src="docs/screenshots/home-mobile.png" alt="PantryFlow mobile home" width="42%">
+  <img src="docs/screenshots/recipe-detail-mobile.png" alt="PantryFlow recipe detail" width="42%">
+  <br><sub>From pantry overview to practical cooking steps.</sub>
 </p>
 
 **Live Demo — Coming soon.**
@@ -51,11 +50,6 @@ Unlike a thin recipe chatbot, PantryFlow combines a curated home-cooking catalog
 - Transactional, idempotent cooking completion and history
 - Missing-ingredient list with one-tap copy
 - Friendly API errors and a key-free provider for reproducible demos
-
-<p align="center">
-  <img src="docs/screenshots/ingredients-mobile.png" alt="PantryFlow pantry management" width="300">
-  <br><sub>Pantry management with meal counts and expiry dates.</sub>
-</p>
 
 ## Demo flow
 

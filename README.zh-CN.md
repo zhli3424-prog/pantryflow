@@ -12,19 +12,15 @@ PantryFlow 是一个移动端优先的 AI 做饭助手，解决“家里有菜�
 
 <p align="center">
   <img src="docs/screenshots/recommendations-desktop.png" alt="PantryFlow 临期菜谱推荐" width="100%">
-  <br><sub>根据库存生成今日菜单，并支持只替换一道菜。</sub>
+  <br><sub>临期优先推荐，并支持只替换一道菜。</sub>
 </p>
 
-<table>
-  <tr>
-    <td align="center" width="50%"><img src="docs/screenshots/home-mobile.png" alt="PantryFlow 手机首页" width="260"><br><sub>库存总览与临期提醒</sub></td>
-    <td align="center" width="50%"><img src="docs/screenshots/ingredients-mobile.png" alt="PantryFlow 食材库存" width="260"><br><sub>低负担的食材管理</sub></td>
-  </tr>
-  <tr>
-    <td align="center" width="50%"><img src="docs/screenshots/recipe-detail-mobile.png" alt="PantryFlow 菜谱详情" width="260"><br><sub>已有食材、缺少食材与制作步骤</sub></td>
-    <td align="center" width="50%"><img src="docs/screenshots/history-mobile.png" alt="PantryFlow 烹饪历史" width="260"><br><sub>烹饪记录与库存反馈</sub></td>
-  </tr>
-</table>
+<p align="center">
+  <img src="docs/screenshots/home-mobile.png" alt="PantryFlow 手机首页" width="30%">
+  <img src="docs/screenshots/recipe-detail-mobile.png" alt="PantryFlow 菜谱详情" width="30%">
+  <img src="docs/screenshots/history-mobile.png" alt="PantryFlow 烹饪历史" width="30%">
+  <br><sub>库存总览 → 菜谱执行 → 烹饪历史</sub>
+</p>
 
 **在线体验 — 即将上线。**
 
@@ -40,6 +36,11 @@ PantryFlow 是一个移动端优先的 AI 做饭助手，解决“家里有菜�
 - 做完后每种使用食材减 1 餐，重复点击不会重复扣减
 - 烹饪历史、缺少食材和购物清单复制
 - 默认 Demo 模式无需 API Key，可稳定复现
+
+<p align="center">
+  <img src="docs/screenshots/ingredients-mobile.png" alt="PantryFlow 食材库存管理" width="300">
+  <br><sub>食材库存管理：剩余餐数、临期日期与快速录入。</sub>
+</p>
 
 ## 演示流程
 

@@ -15,6 +15,7 @@ CORS_ORIGINS=https://YOUR_NETLIFY_SITE.netlify.app
 ```
 
 Keep `AI_PROVIDER=mock` for a public portfolio demo. This avoids exposing a paid model key to anonymous traffic and keeps the demo reproducible.
+The Blueprint also enables `DEMO_SEED_ON_EMPTY=true`, which adds anonymous showcase inventory and three history records only when the database is completely empty.
 
 The API health check is:
 
@@ -54,6 +55,8 @@ Vite embeds `VITE_*` variables at build time. Redeploy the frontend after changi
 4. Open a recipe, complete it, and confirm inventory/history updates.
 5. Refresh a nested URL such as `/recommendations` to verify the SPA redirect.
 6. Confirm browser developer tools show no CORS or mixed-content errors.
+
+The public instance is a shared disposable sandbox: visitors may change the same inventory. Restarting an ephemeral Render service restores an empty filesystem and the showcase data is seeded again.
 
 ## Security boundary
 

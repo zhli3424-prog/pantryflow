@@ -1,5 +1,9 @@
 from datetime import date, timedelta
 
+from sqlalchemy.orm import Session
+
+from app.services.demo_data import seed_demo_data
+
 
 def add(client, name, meal_count, unit="个", days=3):
     response = client.post("/api/v1/ingredients", json={
@@ -167,3 +171,19 @@ def test_same_batch_meal_counts_are_merged(client):
     second = add(client, "番茄", 3, days=2)
     assert first["id"] == second["id"]
     assert second["meal_count"] == 5
+
+
+def test_demo_seed_is_repeatable_and_only_fills_empty_database(client):
+    override = client.app.dependency_overrides
+    db = next(override[next(key for key in override if key.__name__ == "get_db")]())
+    try:
+        assert seed_demo_data(db) is True
+        assert seed_demo_data(db) is False
+    finally:
+        db.close()
+
+    ingredients = client.get("/api/v1/ingredients").json()["data"]
+    history = client.get("/api/v1/history").json()["data"]
+    assert len(ingredients) == 7
+    assert len(history) == 3
+    assert {item["expiry_status"] for item in ingredients} >= {"urgent", "soon", "normal"}

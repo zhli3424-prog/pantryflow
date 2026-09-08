@@ -2,7 +2,7 @@
 
 > Turn what is already in your fridge into practical Chinese home-cooked meals — before good food goes to waste.
 
-![CI](https://img.shields.io/badge/CI-GitHub_Actions-2088FF?logo=githubactions&logoColor=white)
+[![CI](https://github.com/zhli3424-prog/pantryflow/actions/workflows/ci.yml/badge.svg)](https://github.com/zhli3424-prog/pantryflow/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=111)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.141-009688?logo=fastapi&logoColor=white)
@@ -29,7 +29,9 @@ Add ingredients → Generate a menu → Replace one dish → Follow the recipe
 → Mark it cooked → Decrease each used ingredient by one estimated meal
 ```
 
-> A hosted demo and GIF are not bundled yet. Follow the [screenshot checklist](docs/screenshots/README.md) before publishing the repository.
+**Live demo:** TODO — add the Netlify URL after deployment. The hosted build will use the transparent, key-free Mock provider so visitors can safely try the complete workflow.
+
+**Demo GIF:** TODO — add `docs/screenshots/demo.gif` after recording the real application.
 
 ## Features
 
@@ -58,15 +60,6 @@ Add ingredients → Generate a menu → Replace one dish → Follow the recipe
 | `recipe-detail-mobile.png` | `history-mobile.png` | `demo.gif` |
 
 Reserved paths live in [`docs/screenshots`](docs/screenshots/README.md). They should be replaced with real product captures before release.
-
-<!-- Enable these references only after the real files exist:
-![PantryFlow mobile home](docs/screenshots/home-mobile.png)
-![PantryFlow pantry](docs/screenshots/ingredients-mobile.png)
-![PantryFlow recommendations](docs/screenshots/recommendations-desktop.png)
-![PantryFlow recipe detail](docs/screenshots/recipe-detail-mobile.png)
-![PantryFlow cooking history](docs/screenshots/history-mobile.png)
-![PantryFlow demo](docs/screenshots/demo.gif)
--->
 
 ## Tech stack
 
@@ -123,7 +116,7 @@ The LLM stays inside a narrow decision boundary: it ranks approved candidates bu
 Prerequisites: Python 3.12+ and [Bun](https://bun.sh/).
 
 ```powershell
-git clone <repository-url>
+git clone https://github.com/zhli3424-prog/pantryflow.git
 cd pantryflow
 .\setup.ps1
 .\start.ps1
@@ -166,6 +159,7 @@ AI_BASE_URL=https://api.openai.com/v1
 AI_API_KEY=
 AI_MODEL=gpt-4o-mini
 AI_TIMEOUT_SECONDS=30
+DEMO_SEED_ON_EMPTY=false
 ```
 
 For an OpenAI-compatible service, set `AI_PROVIDER=openai_compatible` and configure the base URL, key, and model. Never commit a real `.env` file or secret.

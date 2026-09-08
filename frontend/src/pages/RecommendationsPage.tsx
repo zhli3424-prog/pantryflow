@@ -135,7 +135,6 @@ export default function RecommendationsPage() {
       {initialized && !loading && !error && !recipes.length && <div className="empty-card action-empty"><h2>准备好决定今天吃什么了吗？</h2><p>先确保冰箱里已经添加食材。</p><button className="primary-button" onClick={() => void generate()}>生成今日菜单</button></div>}
       {!!recipes.length && generatedAt && <p className="generated-time">这份菜单生成于 {formatApiDateTime(generatedAt)}</p>}
       <div className="recipe-grid">{recipes.map((recipe, index) => <RecipeCard key={recipe.id} recipe={recipe} index={index} replacing={replacingId === recipe.id} onReplace={(recipeId) => void replaceOne(recipeId)} />)}</div>
-      {recipes[0]?.ai_provider === "mock" && <p className="demo-note">当前为 Demo 推荐模式，可在后端 .env 配置真实 OpenAI 兼容接口。</p>}
     </div>
   );
 }

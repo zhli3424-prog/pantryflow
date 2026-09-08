@@ -11,6 +11,7 @@ from .config import settings
 from .database import Base, engine
 from .routers import health, history, ingredients, recommendations
 from .schemas.common import AppError
+from .services.demo_data import seed_demo_data
 
 
 @asynccontextmanager
@@ -20,6 +21,11 @@ async def lifespan(_: FastAPI):
         # ponytail: one additive SQLite migration is enough for this local MVP.
         with engine.begin() as connection:
             connection.execute(text("ALTER TABLE ingredients ADD COLUMN meal_count INTEGER NOT NULL DEFAULT 1"))
+    if settings.demo_seed_on_empty:
+        from .database import SessionLocal
+
+        with SessionLocal() as db:
+            seed_demo_data(db)
     yield
 
 

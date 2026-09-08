@@ -4,6 +4,8 @@
 
 [English](README.md) · [快速开始](#快速开始) · [部署说明](DEPLOYMENT.md) · [系统架构](#系统架构) · [后续规划](#后续规划)
 
+**在线体验：** TODO — Netlify 部署完成后补充真实地址。公开 Demo 使用无需密钥的 Mock Provider，完整业务流程与本地版本一致。
+
 PantryFlow 是一个移动端优先的 AI 做饭助手，解决“家里有菜，却不知道做什么”的问题。它不要求用户精确称重，而是用“预计还能做几餐”管理库存；系统结合过期日期、现有食材和筛选条件推荐日常菜，做完后自动更新库存并保存历史。
 
 它不是简单的菜谱聊天页面：项目把受控家常菜候选库、可选的大模型排序、结构化输出校验、后端库存规则、推荐批次持久化和幂等扣减连成了完整业务闭环。
@@ -63,7 +65,7 @@ flowchart LR
 需要 Python 3.12+ 和 [Bun](https://bun.sh/)。
 
 ```powershell
-git clone <仓库地址>
+git clone https://github.com/zhli3424-prog/pantryflow.git
 cd pantryflow
 .\setup.ps1
 .\start.ps1
@@ -78,6 +80,7 @@ AI_PROVIDER=openai_compatible
 AI_BASE_URL=https://api.openai.com/v1
 AI_API_KEY=
 AI_MODEL=gpt-4o-mini
+DEMO_SEED_ON_EMPTY=false
 ```
 
 真实 `.env`、API Key、本地数据库和构建产物均不会提交。

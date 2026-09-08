@@ -12,5 +12,7 @@ services:
         value: 3.12.10
       - key: AI_PROVIDER
         value: mock
+      - key: DEMO_SEED_ON_EMPTY
+        value: true
       - key: CORS_ORIGINS
         sync: false

@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     ai_api_key: str = ""
     ai_model: str = "gpt-4o-mini"
     ai_timeout_seconds: float = 30
+    demo_seed_on_empty: bool = False
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
